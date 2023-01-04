@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        tr, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            width: 10%;
+        }
+        form, table {
+            padding: 10px;
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Add A Sighting</h1>
+<form method="post" action="/sightings/">{% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Submit"/>
+</form>
+
+<h2>Previous Sightings</h2>
+<table>
+    <tr>
+        <th>Bird</th>
+        <th>Sex</th>
+        <th>Age</th>
+        <th>Location</th>
+        <th>Activity</th>
+        <th>Spotted By</th>
+        <th>Date</th>
+    </tr>
+    {% for sighting in sightings %}
+        <tr>
+            <td>{{ sighting.species }}</td>
+            <td>{{ sighting.sex }}</td>
+            <td>{{ sighting.age }}</td>
+            <td>{{ sighting.location }}</td>
+            <td>{{ sighting.activity }}</td>
+            <td>{{ sighting.spotter }}</td>
+            <td>{{ sighting.date }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
