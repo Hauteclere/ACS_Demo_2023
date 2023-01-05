@@ -138,7 +138,7 @@ Next, we need to check we have Python's `virtualenv` library installed:
 python3 -m pip install --upgrade virtualenv
 ```
 
-Great, let's go ahead and use `virtualenv` to create a sandbox we can install all the other python modules we need. (This is better than installing them globally on your computer, because after a while you'll lost track of what you have/need.)
+Great, let's go ahead and use `virtualenv` to create a sandbox we can install all the other python modules we need. (This is better than installing them globally on your computer, because after a while with lots of projects you'll track of what modules each one needs.)
 
 ```
 python3 -m virtualenv venv
@@ -174,15 +174,15 @@ pip freeze > requirements.txt
 Setting up a blank Django project is as simple as one command:
 
 ```
-django-admin startproject bird_app
+django-admin startproject bird_project
 ```
 
-We've chosen to call our project `bird_app`. Running this command will create a new folder containing all the boilerplate code required to make a basic Django project run.
+We've chosen to call our project `bird_project`. Running this command will create a new folder containing all the boilerplate code required to make a basic Django project run.
 
-A Django project can contain a number of "apps", which all work together to make your website/s work. We'll create just one. Let's call our app `birds`. First, navigate into the newly-created `bird_app` directory:
+A Django project can contain a number of "apps", which all work together to make your website/s work. We'll create just one. Let's call our app `birds`. First, navigate into the newly-created `bird_project` directory:
 
 ```
-cd bird_app
+cd bird_project
 ```
 
 Now, create the app:
@@ -191,23 +191,21 @@ Now, create the app:
 python manage.py startapp birds
 ```
 
-Now let's navigate up one level in our directory structure, and open our project in VS Code and see what we're working with!
+Now let's open our project in VS Code and see what we're working with!
 
 ```
-cd .. && code .
+code .
 ```
 
 ![The starting directory structure of the app](./img/startapp.png)
 
-<small>I have a few extra files because I'm creating this walkthrough as well as the app! You can just ignore `/img`, `.gitignore`, and `README.md` for now, although a great next step once you complete this walkthrough would be to look into `git` if you haven't already!</small>
-
-<aside>It might be confusing to have two folders called `bird_app`, one in side the other. There's a good reason for it, though. Our `birds` app folder will contain all the files we need to make that particular app work. But a more complex project could have lots of apps, and lots of folders. On the other hand, there are some files that are required to make the whole project go, and we don't want them all floating around loose. For that reason, we have another folder for them, with the same name as the overall project.<aside>
+It might be confusing to have two folders called `bird_project`, one inside the other. There's a good reason for it, though. Our `birds` folder will contain all the files we need to make that particular app work. But a more complex project could have lots of apps, and lots of folders. On the other hand, there are some files that are required to make the whole project go, and we don't want them all floating around loose. For that reason, we have another folder for them, with the same name as the overall project.
 
 <hr style="border-style: dotted;" />
 
 ### Step 2: The Settings
 
-The first code we need to write involves a small change to the settings for our overal project. Open that "inner" `bird_app` folder in VS Code, and you'll find a file called `settings.py`. Scrolling through this file, you should find a section like this:
+The first code we need to write involves a small change to the settings for our overal project. Open that "inner" `bird_project` folder in VS Code, and you'll find a file called `settings.py`. Scrolling through this file, you should find a section like this:
 
 ```python
 INSTALLED_APPS = [
@@ -234,16 +232,13 @@ INSTALLED_APPS = [
 ]
 ```
 
-This registers the `birds` app we are writing with the project, so that Django knows to include it when the code runs.
+This registers the `birds` app we are writing, so that Django knows to include it when the code runs.
 
 <hr style="border-style: dotted;" />
 
 ### Step 3: Migrating the Database (For The First Time)
-We need to perform some initial setup of our database so that it is ready for us to start adding tables to. We can do this with two commands in the terminal:
+We need to perform some initial setup of our database so that it is ready for us to start adding tables to. We can do this with a command in the terminal:
 
-```
-python manage.py makemigrations
-```
 ``` 
 python manage.py migrate
 ```
@@ -304,7 +299,7 @@ That's right, we have to migrate the database once at the very start, and then o
 
 A migration is really just "a change that needs to be applied to the database". Because we just defined a new type of data that needs to be stored, the database needs to be modified to include `BirdSighting` records.
 
-Once again in the terminal, it's those same two commands:
+Once again in the terminal, this time it's two commands:
 
 ```
 python manage.py makemigrations
@@ -430,7 +425,7 @@ def bird_sightings(request):
 <hr style="border-style: dotted;" />
 
 ### Step 8: A Little Bit Of URL Housekeeping
-If we want our users to be able to access this view, we need to register it to some URL. For now, we are still in the development phase of our website, so we won't make it available on the public web. But we can still define an address for it locally. Open the `urls.py` file in `/bird_app/bird_app`, and add a single line, just above the final closing square bracket:
+If we want our users to be able to access this view, we need to register it to some URL. For now, we are still in the development phase of our website, so we won't make it available on the public web. But we can still define an address for it locally. Open the `urls.py` file in `/bird_project/bird_project`. We are making two changes - one extra `import`, and one extra `path()`:
 
 ```python
 from django.contrib import admin

@@ -1,7 +1,6 @@
 from django.db import models
 from django.forms import ModelForm
 
-
 class BirdSighting(models.Model):
     SEX_CHOICES = [
         ('M', 'Male'),
