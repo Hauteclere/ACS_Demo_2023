@@ -9,9 +9,7 @@ You can also find the completed code in this repository, for you to compare to y
 
 ---
 
-## Table of Contents
 - [ACS Demo 2023 - Python Masterclass II: Electric Coderoo](#acs-demo-2023---python-masterclass-ii-electric-coderoo)
-  - [Table of Contents](#table-of-contents)
   - [What We Are Doing](#what-we-are-doing)
   - [What You Need](#what-you-need)
     - [Python 3](#python-3)
@@ -40,7 +38,6 @@ You can also find the completed code in this repository, for you to compare to y
     - [W3 Schools](#w3-schools)
     - [YouTube](#youtube)
     - [Django Info](#django-info)
-
 
 ---
 
