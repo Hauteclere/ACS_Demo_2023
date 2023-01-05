@@ -63,6 +63,12 @@ There are a few really useful tools you can use to get a little bit more out of 
 ### [Python 3](https://wsvincent.com/install-python/)
 Python 3 is the language I'll be discussing in the talk, so if you want to code along and try anything I demonstrate for yourself, you'll have it easier if you have it installed ahead of time! This link provides a good guide for installing it on any operating system. 
 
+Check to see if you already have it before you try installing, by running the following command in your terminal. If you get a version number back, you're good! If you get an error you'll need to install.
+
+```
+python3 --version
+```
+
 ### [VS Code](https://code.visualstudio.com/download)
 VS Code is an editor we'll be using to write code. You don't really need VS Code to program in Python - you can do it with another text editor like notepad, or even through the terminal if you want to. VS Code is a great tool to use, though, which will make a lot of things easier.
 
