@@ -33,8 +33,9 @@ You can also find the completed code in this repository, for you to compare to y
     - [Step 6: Writing A Template](#step-6-writing-a-template)
     - [Step 7: Writing A View](#step-7-writing-a-view)
     - [Step 8: A Little Bit Of URL Housekeeping](#step-8-a-little-bit-of-url-housekeeping)
-    - [Step 9: Go Look At A Bird](#step-9-go-look-at-a-bird)
-    - [Step 10: Record Your Sighting](#step-10-record-your-sighting)
+    - [Step 9: Start Your Website](#step-9-start-your-website)
+    - [Step 10: Go Look At A Bird](#step-10-go-look-at-a-bird)
+    - [Step 11: Record Your Sighting](#step-11-record-your-sighting)
   - [Useful Resources:](#useful-resources)
     - [W3 Schools](#w3-schools)
     - [YouTube](#youtube)
@@ -253,6 +254,8 @@ If all goes well you should see this:
 
 ![The Django "Success" page](./img/success.png)
 
+We need to use the terminal a little more before we are ready to run the website for real, so for now let's turn it back off again. To do this you can just open the terminal and press `Ctrl+C` (Windows/Linux) or `COMMAND-C` (Mac).
+
 <hr style="border-style: dotted;" />
 
 ### Step 4: Writing A Model
@@ -319,9 +322,6 @@ Inside that directory, create a new file called `sightings.html`.
 Your app structure probably looks something like this, now:
 
 ![The updated app structure, with a templates folder and a first template.](./img/templates.png)
-
-
-<small>Remember - you can just ignore `/img`, `.gitignore`, and `README.md` for now. You don't need them. </small>
 
 Open that `sightings.html` file and let's add some `HTML` code!
 
@@ -440,15 +440,29 @@ urlpatterns = [
 
 <hr style="border-style: dotted;" />
 
-### Step 9: Go Look At A Bird
+### Step 9: Start Your Website
+You can do this in the terminal with the same command we used before:
+
+```
+python manage.py runserver
+```
+
+
+<hr style="border-style: dotted;" />
+
+### Step 10: Go Look At A Bird
 Go on, what are you waiting for?
 
 <hr style="border-style: dotted;" />
 
-### Step 10: Record Your Sighting
+### Step 11: Record Your Sighting
+To access the page we've added to our site, you'll need to navigate to [http://127.0.0.1:8000/sightings/](http://127.0.0.1:8000/sightings/) in your browser.
+
 Behold - a functional website!!
 
 ![The working website with no sightings recorded yet.](./img/no_sightings.png)
+
+Let's add that sighting...
 
 ![The website after one sighting has been recorded.](./img/first_sighting.png)
 
