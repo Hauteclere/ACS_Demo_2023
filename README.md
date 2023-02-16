@@ -162,13 +162,13 @@ venv/Scripts/activate
 Perfect, now we can install Django:
 
 ```
-pip install django
+python3 -m pip install django
 ```
 
 While we're here, we should take the time to start a `requirements.txt` file. This will let us keep track of the dependencies our project has:
 
 ```
-pip freeze > requirements.txt
+python3 -m pip freeze > requirements.txt
 ```
 
 <hr style="border-style: dotted;" />
@@ -192,7 +192,7 @@ cd bird_project
 Now, create the app:
 
 ```
-python manage.py startapp birds
+python3 manage.py startapp birds
 ```
 
 Now let's open our project in VS Code and see what we're working with!
@@ -244,13 +244,13 @@ This registers the `birds` app we are writing, so that Django knows to include i
 We need to perform some initial setup of our database so that it is ready for us to start adding tables to. We can do this with a command in the terminal:
 
 ``` 
-python manage.py migrate
+python3 manage.py migrate
 ```
 
 Now we can check that everything is working by starting up the website for the first time:
 
 ```
-python manage.py runserver
+python3 manage.py runserver
 ```
 
 If all goes well you should see this:
@@ -308,10 +308,10 @@ A migration is really just "a change that needs to be applied to the database". 
 Once again in the terminal, this time it's two commands:
 
 ```
-python manage.py makemigrations
+python3 manage.py makemigrations
 ```
 ``` 
-python manage.py migrate
+python3 manage.py migrate
 ```
 
 <hr style="border-style: dotted;" />
@@ -447,7 +447,7 @@ urlpatterns = [
 You can do this in the terminal with the same command we used before:
 
 ```
-python manage.py runserver
+python3 manage.py runserver
 ```
 
 
